@@ -2,9 +2,9 @@ class UsersController < ApplicationController
 
   def index
     matching_users = User.all
-    @users = matching_users.order(:created_at)
+    @users = matching_users.order(:username => :asc)
 
-    render({ :template => "users_templates/all_users"})
+    render({ :template => "user_templates/all_users"})
   end
   
   def show
